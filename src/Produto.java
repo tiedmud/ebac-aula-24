@@ -1,3 +1,5 @@
+import static java.lang.Integer.parseInt;
+
 public class Produto implements Comparable<Produto> {
     private String nome;
     private double preco;
@@ -28,6 +30,7 @@ public class Produto implements Comparable<Produto> {
 
     @Override
     public int compareTo(Produto o) {
-        return Double.valueOf(this.preco).compareTo(Double.valueOf(o.preco));
+        Produto f = (Produto) o;
+        return (int) (this.preco - f.preco);
     }
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ public class Main {
         List<Produto> listaProduto = new ArrayList<>();
 
         do {
-            System.out.printf("Digite a operação:\n1 - Cadastrar\n2 - Exibir\n3 - Sair");
+            System.out.printf("Digite a operação:\n1 - Cadastrar\n2 - Exibir\n3 - Sair\n");
             operacao = scanner.nextInt();
             scanner.nextLine();
 
@@ -39,14 +40,17 @@ public class Main {
                 break;
 
                 case 2:
+                    Collections.sort(listaProduto);
 
+                    for (int i = 0; i < listaProduto.size(); i++) {
+                        System.out.println(listaProduto.get(i).toString());
+                    }
                 break;
 
                 default:
                 break;
             }
         } while (operacao == 1 || operacao == 2);
-
 
     }
 }
